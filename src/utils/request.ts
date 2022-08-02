@@ -1,4 +1,5 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
+import type { IResponseData } from '@/api/types/publicTypes'
 
 const request = axios.create({
   baseURL: 'https://shop.fed.lagounews.com/api/admin'
@@ -22,4 +23,4 @@ request.interceptors.response.use(response => {
   return response
 })
 
-export default request
+export default <T>(config: AxiosRequestConfig) => request(config).then(res => res.data as IResponseData<T>)

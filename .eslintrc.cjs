@@ -23,5 +23,13 @@ module.exports = {
         ignores: ['index']
       }
     ]
-  }
+  },
+  overrides: [
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 0
+      }
+    }
+  ]
 }
