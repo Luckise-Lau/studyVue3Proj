@@ -18,5 +18,12 @@ export default defineConfig({
     alias: {
       '@': path.join(__dirname, 'src')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        additionalData: '@import "@/styles/variables.less";'
+      }
+    }
   }
 })

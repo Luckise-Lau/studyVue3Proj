@@ -23,4 +23,7 @@ console.log(store.state.count)
   height: 200px;
   background: url('@/assets/vue.svg') no-repeat;
 }
+h1{
+  color: @color;
+}
 </style>
