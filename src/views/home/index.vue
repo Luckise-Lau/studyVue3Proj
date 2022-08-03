@@ -7,12 +7,21 @@
     alt="logo"
   >
   <div class="csa" />
+  <el-button>测试按钮</el-button>
+  <el-date-picker
+    v-model="value1"
+    type="date"
+    placeholder="Pick a day"
+    :size="size"
+  />
 </template>
 
 <script lang='ts' setup>
 import { useStore } from '@/store'
 
 const store = useStore()
+const value1 = ''
+const size = ''
 
 console.log(store.state.count)
 </script>
