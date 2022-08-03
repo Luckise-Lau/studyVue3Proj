@@ -26,5 +26,13 @@ export default defineConfig({
         additionalData: '@import "@/styles/variables.less";'
       }
     }
+  },
+  server: {
+    proxy: {
+      '/admin': {
+        target: 'https://shop.fed.lagounews.com/api',
+        changeOrigin: true
+      }
+    }
   }
 })
