@@ -1,5 +1,5 @@
 <template>
-  <h1>登录页</h1>
+  <h1>媒体管理</h1>
 </template>
 
 <script lang='ts' setup></script>
