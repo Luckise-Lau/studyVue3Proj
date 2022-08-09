@@ -4,21 +4,33 @@ const routes: RouteRecordRaw = {
   path: 'permission',
   name: 'permission',
   component: RouterView,
+  meta: {
+    crumbName: '权限'
+  },
   children: [
     {
       path: 'permission_role',
-      name: 'permission_role',
-      component: () => import('@/views/permission/role/index.vue')
+      name: 'permissionRole',
+      component: () => import('@/views/permission/role/index.vue'),
+      meta: {
+        crumbName: '角色'
+      }
     },
     {
       path: 'permission_admin',
-      name: 'permission_admin',
-      component: () => import('@/views/permission/admin/index.vue')
+      name: 'permissionAdmin',
+      component: () => import('@/views/permission/admin/index.vue'),
+      meta: {
+        crumbName: '管理员'
+      }
     },
     {
       path: 'permission_rule',
-      name: 'permission_rule',
-      component: () => import('@/views/permission/rule/index.vue')
+      name: 'permissionRule',
+      component: () => import('@/views/permission/rule/index.vue'),
+      meta: {
+        crumbName: '规则'
+      }
     }
   ]
 }

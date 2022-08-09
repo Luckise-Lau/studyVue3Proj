@@ -2,10 +2,8 @@
   <el-menu
     default-active="2"
     class="el-appMenu"
-    :collapse="isCollapse"
+    :collapse="store.state.isCollapse"
     text-color="#FFF"
-    @open="handleOpen"
-    @close="handleClose"
     router
   >
     <el-menu-item
@@ -26,15 +24,19 @@
         <span>商品</span>
       </template>
       <el-menu-item index="/product/product_list">
+        <el-icon><Location /></el-icon>
         商品列表
       </el-menu-item>
       <el-menu-item index="/product/product_classify">
+        <el-icon><Location /></el-icon>
         商品分类
       </el-menu-item>
       <el-menu-item index="/product/product_attr">
+        <el-icon><Location /></el-icon>
         商品规格
       </el-menu-item>
       <el-menu-item index="/product/product_reply">
+        <el-icon><Location /></el-icon>
         商品评价
       </el-menu-item>
     </el-sub-menu>
@@ -44,6 +46,7 @@
         <span>订单</span>
       </template>
       <el-menu-item index="/order/order_list">
+        <el-icon><Location /></el-icon>
         订单列表
       </el-menu-item>
     </el-sub-menu>
@@ -59,12 +62,15 @@
         <span>权限</span>
       </template>
       <el-menu-item index="/permission/permission_role">
+        <el-icon><Location /></el-icon>
         角色
       </el-menu-item>
       <el-menu-item index="/permission/permission_admin">
+        <el-icon><Location /></el-icon>
         管理员
       </el-menu-item>
       <el-menu-item index="/permission/permission_rule">
+        <el-icon><Location /></el-icon>
         权限规则
       </el-menu-item>
     </el-sub-menu>
@@ -72,23 +78,14 @@
 </template>
 
 <script lang='ts' setup>
-import { ref } from 'vue'
+import { useStore } from '@/store'
 
-const isCollapse = ref(false)
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+const store = useStore()
 
 </script>
 
 <style lang='less' scoped>
   .el-appMenu{
-    --bg-color: @appMenuBgColor;
-    --el-menu-bg-color: @appMenuBgColor;
-    --el-menu-hover-bg-color: @appMenuHoverBgColor;
     border-right: none;
 
     .el-appLogo{
@@ -103,6 +100,5 @@ const handleClose = (key: string, keyPath: string[]) => {
       width: 200px;
       min-height: 400px;
     }
-
   }
 </style>
