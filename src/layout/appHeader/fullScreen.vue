@@ -30,6 +30,7 @@ const toggleFullScreen = () => {
   .el-toggoleFullScreen{
     font-size: 20px; cursor: pointer;
     color: #206BC4; vertical-align: 2px;
-    float: right; margin-top: 20px; margin-right: 10px;
+    float: right; margin-top: 20px;
+    margin-right: 70px;
   }
 </style>

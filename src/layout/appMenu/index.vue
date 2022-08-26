@@ -81,7 +81,6 @@
 import { useStore } from '@/store'
 
 const store = useStore()
-
 </script>
 
 <style lang='less' scoped>
@@ -97,8 +96,7 @@ const store = useStore()
     }
 
     &:not(.el-menu--collapse) {
-      width: 200px;
-      min-height: 400px;
+      width: 200px; min-height: 400px;
     }
   }
 </style>

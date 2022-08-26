@@ -2,6 +2,7 @@
   <h1>首页</h1>
 </template>
 
-<script lang='ts' setup></script>
+<script lang='ts' setup>
+</script>
 
 <style lang='less' scoped></style>

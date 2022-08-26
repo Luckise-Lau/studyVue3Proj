@@ -6,11 +6,15 @@ import mediaRoutes from './modules/media'
 import permissionRoutes from './modules/permission'
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
+import { store } from '@/store'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: appLayout,
+    meta: {
+      requiredAuth: true
+    },
     children: [
       {
         path: '', // 默认子路由
@@ -39,8 +43,16 @@ const router: Router = createRouter({
 })
 
 // 路由前置守卫
-router.beforeEach(() => {
+router.beforeEach((to, from) => {
+  // 加载进度条
   nprogress.start()
+  // 必须登录才能查看
+  if (to.meta.requiredAuth && !store.state.user) {
+    return {
+      path: '/login',
+      query: { redirect: to.fullPath }
+    }
+  }
 })
 
 // 路由后置守卫

@@ -2,7 +2,7 @@
   <div class="common-layout">
     <el-container>
       <el-aside>
-        <app-menu />
+        <AppMenu />
       </el-aside>
       <el-container>
         <el-header>
@@ -12,7 +12,6 @@
           <!-- 子路由出口 -->
           <router-view />
         </el-main>
-        <el-footer>Footer</el-footer>
       </el-container>
     </el-container>
   </div>
